@@ -1,0 +1,36 @@
+{% include 'header.html.twig' %}
+
+<h3>Quotes</h3>
+<p><a href="./">Return to main menu</a></p>
+
+
+{% if quotes %}
+    <table class="table table-condensed table-hover">
+        {% for quote in quotes %}
+            <tr>
+                <td>{{ quote.InvoiceDBID }}</td>
+                <td>{{ quote.InvoiceNumber }}</td>
+                <td>{{ quote.DueDate }}</td>
+                <td>{{ quote.Customer }}</td>
+                <td>{{ quote.CustomerID }}</td>
+                <td>{{ quote.Paid }}</td>
+                <td>{{ quote.CustomerReference }}</td>
+                <td>{{ quote.EstimateCategory }}</td>
+                <td>{{ quote.SuppressTotal }}</td>
+                <td>{{ quote.ProjectID }}</td>
+                <td>{{ quote.CurrencyCode }}</td>
+                <td>{{ quote.ExchangeRate }}</td>
+                <td>{{ quote.ReadableString }}</td>
+                <td>{{ quote.NetAmount }}</td>
+                <td>{{ quote.VATAmount }}</td>
+                <td>{{ quote.AmountPaid }}</td>
+                <td>{{ quote.PermaLink }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    Sorry, no quotes to list
+{% endif %}
+
+
+{% include 'footer.html.twig' %}

@@ -1,0 +1,39 @@
+{% include 'header.html.twig' %}
+
+<h3>Invoices</h3>
+<p><a href="./">Return to main menu</a></p>
+
+
+{% if invoices %}
+    <table class="table table-condensed table-hover">
+        <thead>
+        <tr>
+            <th>Invoice</th>
+            <th>Invoice date</th>
+            <th>Customer</th>
+            <th>Amount</th>
+            <th>Paid</th>
+            <th>Currency</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for invoice_details in invoices %}
+            {% for invoice in invoice_details %}
+                <tr>
+                    <td>{{ invoice.InvoiceNumber }}</td>
+                    <td>{{ invoice.InvoiceDate|date("d/m/Y") }}</td>
+                    <td>{{ invoice.CustomerName }}</td>
+                    <td>{{ invoice.NetAmount|number_format(2) }}</td>
+                    <td>{% if invoice.Paid %}Yes{% else %}No{% endif %}</td>
+                    <td>{{ invoice.CurrencyCode }}</td>
+                </tr>
+            {% endfor %}
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    Sorry, no invoices to list
+{% endif %}
+
+
+{% include 'footer.html.twig' %}

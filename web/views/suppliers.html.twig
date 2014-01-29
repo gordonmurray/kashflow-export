@@ -1,0 +1,43 @@
+{% include 'header.html.twig' %}
+
+<h3>Suppliers</h3>
+<p><a href="./">Return to main menu</a></p>
+
+
+{% if suppliers %}
+    <table class="table table-condensed table-hover">
+        {% for supplier in suppliers %}
+            <tr>
+                <td>{{ supplier.SupplierID }}</td>
+                <td>{{ supplier.Code }}</td>
+                <td>{{ supplier.Name }}</td>
+                <td>{{ supplier.Contact }}</td>
+                <td>{{ supplier.Mobile }}</td>
+                <td>{{ supplier.Fax }}</td>
+                <td>{{ supplier.Address1 }}</td>
+                <td>{{ supplier.Address2 }}</td>
+                <td>{{ supplier.Address3 }}</td>
+                <td>{{ supplier.Address4 }}</td>
+                <td>{{ supplier.PostCode }}</td>
+                <td>{{ supplier.Telephone }}</td>
+                <td>{{ supplier.Website }}</td>
+                <td>{{ supplier.Email }}</td>
+                <td>{{ supplier.Created }}</td>
+                <td>{{ supplier.Updated }}</td>
+                <td>{{ supplier.EC }}</td>
+                <td>{{ supplier.VATNumber }}</td>
+                <td>{{ supplier.Notes }}</td>
+                <td>{{ supplier.CurrencyID }}</td>
+                <td>{{ supplier.PaymentTerms }}</td>
+                <td>{{ supplier.ContactTitle }}</td>
+                <td>{{ supplier.ContactFirstName }}</td>
+                <td>{{ supplier.ContactLastName }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    Sorry, no suppliers to list
+{% endif %}
+
+
+{% include 'footer.html.twig' %}

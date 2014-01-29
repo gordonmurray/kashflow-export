@@ -1,0 +1,36 @@
+{% include 'header.html.twig' %}
+
+<h3>Customers</h3>
+<p><a href="./">Return to main menu</a></p>
+
+{% if customers %}
+    <table class="table table-condensed table-hover">
+        <thead>
+        <tr>
+            <th>Customer ID</th>
+            <th>Code</th>
+            <th>Contact</th>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>Website</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for customer in customers %}
+            <tr>
+                <td>{{ customer.CustomerID }}</td>
+                <td>{{ customer.Code }}</td>
+                <td>{{ customer.Contact }}</td>
+                <td>{{ customer.Name }}</td>
+                <td>{{ customer.Mobile }}</td>
+                <td>{{ customer.Website }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    Sorry, no customers to list
+{% endif %}
+
+
+{% include 'footer.html.twig' %}

@@ -1,0 +1,40 @@
+{% include 'header.html.twig' %}
+
+<h3>Invoice payments</h3>
+<p><a href="./">Return to main menu</a></p>
+
+
+{% if invoice_payments %}
+    <table class="table table-condensed table-hover">
+        <thead>
+        <tr>
+            <th>Pay ID</th>
+            <th>Invoice</th>
+            <th>Date</th>
+            <th>Note</th>
+            <th>Method</th>
+            <th>Account</th>
+            <th>Amount</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for payment_details in invoice_payments %}
+            {% for payment in payment_details %}
+                <tr>
+                    <td>{{ payment.PayID }}</td>
+                    <td>{{ payment.PayInvoice }}</td>
+                    <td>{{ payment.PayDate }}</td>
+                    <td>{{ payment.PayNote }}</td>
+                    <td>{{ payment.PayMethod }}</td>
+                    <td>{{ payment.PayAccount }}</td>
+                    <td>{{ payment.PayAmount }}</td>
+                </tr>
+            {% endfor %}
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    Sorry, no invoice payments to list
+{% endif %}
+
+{% include 'footer.html.twig' %}

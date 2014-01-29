@@ -1,0 +1,11 @@
+View and Export your data from Kashflow
+=======================================
+
+This is a simple application to allow you to view and export your existing Kashflow data. It uses the Kashflow API to retrieve the data.
+
+Built using:
+------------
+
+* Silex - A light weight PHP framework
+* Slim - A templating engine
+* Twitter Bootstrap - To give a clean interface
