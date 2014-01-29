@@ -1,11 +1,16 @@
-View and Export your data from Kashflow
-=======================================
+View, Export and Delete your data from Kashflow
+===============================================
 
-This is a simple application to allow you to view and export your existing Kashflow data. It uses the Kashflow API to retrieve the data.
+This is a simple application to allow you to view, export and delete your existing Kashflow data. It uses the Kashflow API to retrieve the data.
 
-Built using:
-------------
+Built using
+-----------
 
 * Silex - A light weight PHP framework
-* Slim - A templating engine
+* Twig - A templating engine
 * Twitter Bootstrap - To give a clean interface
+
+Thanks
+------
+
+Thanks to Steve Bates for his original work with the Kashflow API: http://www.stevebates.co.uk/kashflow/
